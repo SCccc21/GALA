@@ -22,7 +22,7 @@ multi-turn scenarios.
 ## Usage
 
 1.  **Set up your API keys and endpoints:**
-    *   In `gala_qwen.py`, configure the `openai_key` and the `base_url` for your attacker model (e.g., Qwen) and target models (e.g., Llama).
+    *   In `gala_qwen.py`, configure the `openai_key` and the `base_url` for your attacker model (e.g., Qwen) and target models (e.g., Llama). You can use `vllm` to host the model.
     *   In `gpt_judge_binary_qi.py`, set your `openai_key` for the GPT-4 judge model.
 
 2.  **Run the GALA agent:**
@@ -44,7 +44,7 @@ multi-turn scenarios.
 
 ## Script Descriptions
 
-*   `gala_qwen.py`: This is the main script for running the GALA red-teaming agent. It implements the core logic of the multi-turn attack, including the planning, belief update, and learning modules. The agent interacts with a specified target LLM to achieve harmful goals read from the JailbreakBench dataset.
+*   `gala_qwen.py`: This is the main script for running the GALA red-teaming agent. It implements the core logic of the multi-turn attack, including the planning, belief update, and learning modules. The agent interacts with a specified target LLM to achieve harmful goals read from the [JailbreakBench](https://huggingface.co/datasets/JailbreakBench/JBB-Behaviors) dataset.
 
 *   `constant_agent.py`: This file contains the prompt templates and the initial knowledge base (memory) for the GALA agent. The memory includes a `Tactic Pool` of known adversarial techniques and examples of successful past attacks (`Success Trials`).
 
